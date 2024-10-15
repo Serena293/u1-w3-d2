@@ -83,87 +83,135 @@
       /* ESERCIZIO 1
        Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
     */
-
-      const changeTitle = function () {}
+      const title = document.getElementsByTagName("h1")[0];
+      const changeTitle = function () {
+        title.innerText = "DOM manipulation!";
+      };
+      changeTitle();
 
       /* ESERCIZIO 2
        Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
     */
 
-      const addClassToTitle = function () {}
+      const addClassToTitle = function () {
+        title.className = "myHeading";
+      };
+      addClassToTitle();
 
       /* ESERCIZIO 3
        Scrivi una funzione che cambi il testo dei p figli di un div
       */
-
-      const changePcontent = function () {}
-
+      const pOfDiv = document.querySelector("div p");
+      const changePcontent = function () {
+        pOfDiv.innerText = "Questo testo è stato cambiato per fare pratica";
+      };
+      changePcontent();
       /* ESERCIZIO 4
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
       */
-
-      const changeUrls = function () {}
-
+      const a = document.getElementsByTagName("a");
+      const changeUrls = function () {
+        for (let i = 0; i < a.length - 1; i++) {
+          a[i].setAttribute("href", "https://www.google.com");
+          a[i].setAttribute("target", "_blank");
+        }
+      };
+      changeUrls();
       /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
     */
-
-      const addToTheSecond = function () {}
-
+      const ul = document.getElementsByTagName("ul");
+      const addToTheSecond = function () {
+        const newElement = document.createElement("li");
+        newElement.innerText = "Questa è la soluzione dell'esercizio cinque";
+        ul[1].appendChild(newElement);
+      };
+      addToTheSecond();
       /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un paragrafo al primo div
     */
 
-      const addParagraph = function () {}
+      const div = document.getElementsByTagName("div");
+      const addParagraph = function () {
+        const newP = document.createElement("p");
+        newP.innerText =
+          "Questo paragrafo è la soluzione dell'esercizio numero 6.";
+        div[0].appendChild(newP);
+      };
+      addParagraph();
 
       /* ESERCIZIO 7
        Scrivi una funzione che faccia scomparire la prima lista non ordinata
     */
 
-      const hideFirstUl = function () {}
+      const hideFirstUl = function () {
+        ul[0].remove();
+      };
 
+      hideFirstUl();
       /* ESERCIZIO 8 
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
-      const paintItGreen = function () {}
+      const paintItGreen = function () {
+        for (let i = 0; i < ul.length; i++) {
+          ul[i].style.backgroundColor = "green";
+        }
+      };
+      paintItGreen();
 
       /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
-      const makeItClickable = function () {}
+      const makeItClickable = function () {
+        title.innerText = "DOM manipulation";
+      };
+
+      title.addEventListener("click", makeItClickable);
 
       /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
-      const revealFooterLink = function () {}
+      const footer = document.getElementsByTagName("footer")[0];
+      const revealFooterLink = function () {
+        const popUp = function () {
+          alert("AWESOME!");
+        };
+       footer.addEventListener("click", popUp);
+      };
+ 
+   revealFooterLink()
 
       /* ESERCIZIO 11
        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
-
-      const generateTable = function () {}
+const tableArea = document.getElementById('tableArea')
+      const generateTable = function () {
+        const table = document.createElement('')
+        table.innerText = 'testo di prova'
+        tableArea.appendChild[table]
+      };
 
       /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-      const addRow = function () {}
+      const addRow = function () {};
 
       /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
-      const hideAllImages = function () {}
+      const hideAllImages = function () {};
 
       /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
     */
 
-      const changeColorWithRandom = function () {}
+      const changeColorWithRandom = function () {};
     </script>
   </body>
 </html>
