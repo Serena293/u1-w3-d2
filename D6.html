@@ -179,27 +179,61 @@
         const popUp = function () {
           alert("AWESOME!");
         };
-       footer.addEventListener("click", popUp);
+        footer.addEventListener("click", popUp);
       };
- 
-   revealFooterLink()
+
+      revealFooterLink();
 
       /* ESERCIZIO 11
        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
-const tableArea = document.getElementById('tableArea')
+      const tableArea = document.getElementById("tableArea");
       const generateTable = function () {
-        const table = document.createElement('')
-        table.innerText = 'testo di prova'
-        tableArea.appendChild[table]
+        const table = document.createElement("table");
+        table.innerText = "Tabella -->";
+        tableArea.appendChild(table);
+
+        const th = document.createElement("th");
+        th.innerText = "Immagine";
+        table.appendChild(th);
+        const th1 = document.createElement("th");
+        th.innerText = "Nome prodotto";
+        table.appendChild(th1);
+        const th2 = document.createElement("th");
+        th2.innerText = "Quantità";
+        table.appendChild(th2);
+        const th3 = document.createElement("th");
+        th3.innerText = "Prezzo";
+        table.appendChild(th3);
       };
 
+      generateTable();
       /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-      const addRow = function () {};
+      const addRow = function (img, np, q, p) {
+        const newRow = document.createElement("tr");
+        const newImg = document.createElement("img");
+        img.src = img;
+        img.alt = "Qui ci andrebbe l'immagine, ma non ho tempo";
+        newRow.appendChild(newImg);
+
+        const newProduct = document.createElement("td");
+        newProduct.innerText = np;
+        newRow.appendChild(newProduct);
+
+        const quantity = document.createElement("td");
+        quantity.innerText = q;
+        newRow.appendChild(quantity);
+
+        const price = document.createElement("td");
+        price.innerText = p;
+        newRow.appendChild(price);
+
+        tableArea.appendChild(newRow);
+      };
 
       /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
@@ -210,8 +244,14 @@ const tableArea = document.getElementById('tableArea')
       /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
     */
-
-      const changeColorWithRandom = function () {};
+      const h2 = document.getElementsByTagName("h2")[0];
+      const changeColorWithRandom = function () {
+        const randomColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+        h2.style.color = randomColor;
+       
+      };
+      h2.addEventListener("click", changeColorWithRandom);
     </script>
   </body>
 </html>
